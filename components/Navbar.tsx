@@ -10,7 +10,7 @@ import Image from "next/image";
 const fullConfig = resolveConfig(tailwindConfig);
 function Navbar() {
   return (
-    <div className=" h-[5%] flex-row flex items-center w-[100%] px-4 justify-end md:justify-between bg-white">
+    <div className=" h-auto p-1 flex-row flex items-center w-[100%] px-4 justify-end md:justify-between bg-white ">
       <div className="hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
         <Image src="/search.png" alt="" width={14} height={14} />
         <input

@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       <div className={` w-[14%] md:w-[8%] xl:w-[14%] lg:w-[16%]`}>
         <Link
           href={"/"}
-          className="flex row justify-start items-center gap-2 p-2 sm:justify-center md:justify-center"
+          className="fixed flex row justify-start items-center lg:gap-2 lg:p-2 sm:justify-center md:justify-center"
         >
           <Image src="/logo.png" width={40} height={40} alt="logo" />
 
@@ -28,7 +28,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         </Link>
         <Menu />
       </div>
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-auto flex flex-col">
+      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-auto flex flex-col gap-2">
         <Navbar />
         {children}
       </div>

@@ -118,31 +118,34 @@ const menuItems = [
 ];
 function Menu() {
   return (
-    <div>
+    <div className="fixed mt-14 w-16 lg:w-64 h-[calc(100vh-3.5rem)] overflow-y-auto">
       {menuItems.map((i) => (
-        <div key={i.title} className="mt-4">
-          <div className=" text-gray-500 hidden lg:block my-4">
-            <span>{i.title}</span>
+        <div key={i.title} className="mt-4 present">
+          <div className=" text-gray-500 hidden lg:block pb-2">
+            <span >{i.title}</span>
           </div>
-          <div>
+          <div className="flex flex-col gap-1">
             {i.items.map((item) => {
               if (item.visible.includes(role)) {
                 return (
                   <Link
                     href={item.href}
-                    className="flex items-center justify-center lg:justify-start gap-4 text-gray-800 py-2 md:px-2 rounded-md hover:bg-gray-100"
+                    className="flex items-center px-3 py-2 text-gray-800 rounded-md hover:bg-gray-100 transition-colors"
                     key={item.label}
                   >
-                    <Image
-                      src={item.icon}
-                      alt={item.label}
-                      width={25}
-                      height={15}
-                    />
-                    <span className="hidden lg:block">{item.label}</span>
+                    <div className="min-w-[25px]">
+                      <Image
+                        src={item.icon}
+                        alt={item.label}
+                        width={25}
+                        height={25}
+                      />
+                    </div>
+                    <span className="hidden lg:block ml-3">{item.label}</span>
                   </Link>
                 );
               }
+              return null;
             })}
           </div>
         </div>
