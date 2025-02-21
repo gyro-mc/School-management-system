@@ -2,7 +2,6 @@
 import Announcements from "@/components/Announcements";
 import { AttendanceBarChart } from "@/components/AttendanceBarChart";
 import { GenderChart } from "@/components/GenderChart";
-import EventCalendar from "@/components/EventCalendar";
 import UserCard from "@/components/UserCard";
 import React from "react";
 import { FinanceChart } from "@/components/FinanceChart";
@@ -24,8 +23,8 @@ function page() {
         </div>
       <FinanceChart/>
       </div>
-      <div className="w-1/3 hidden lg:block md:flex     ">
-        <EventCalendar />
+      <div className="w-1/3 hidden lg:block md:flex">
+        {/* <EventCalendar /> */}
         <Announcements />
       </div>
     </div>
