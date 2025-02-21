@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client"
+import React, { useState} from "react";
 import { IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -6,7 +7,14 @@ import CalendarViewWeekIcon from "@mui/icons-material/CalendarViewWeek";
 import SearchIcon from "@mui/icons-material/Search";
 
 function TableBar({ props }: { props: string }) {
+  const [mounted, setMounted] = React.useState(false);
   const [inputValue, setInputValue] = useState("");
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="flex justify-between p-4">
